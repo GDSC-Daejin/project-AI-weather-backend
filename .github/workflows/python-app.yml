@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: Python application
 
 on:
@@ -16,8 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./db-insert
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
@@ -27,14 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-
+          cd db-insert
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Setting .env
         run: |
           echo "DB_IP_ADDR=${{ secrets.DB_IP_ADDR }}" >> .env
-
       - name: Run python
         run: |
-          export PYTHONPATH= ${{ env.working-directory }}
-          python csv_reader.py
+          cd db-insert
+          echo $DB_IP_ADDR
+          python csv_reader.py >> output.txt
+          cat output.txt
