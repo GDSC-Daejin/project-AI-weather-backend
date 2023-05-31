@@ -45,5 +45,5 @@ if __name__ == "__main__":
                     pool.apply_async(mt_process, (Label,))
                 pool.close()
                 pool.join()
-        if os.path.isfile(file_path):
-            os.remove(file_path)
+        # if os.path.isfile(file_path):
+        #     os.remove(file_path)
