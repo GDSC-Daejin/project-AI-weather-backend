@@ -39,5 +39,5 @@ jobs:
           git config user.name "dntjd1097"
           git config user.email "dntjd1097@gmail.com"
           git add -A .
-          git commit -m "generated"
+          git commit -m "remove .csv"
           git push
