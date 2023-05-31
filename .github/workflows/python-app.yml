@@ -36,3 +36,11 @@ jobs:
           echo $DB_IP_ADDR
           python csv_reader.py >> output.txt
           cat output.txt
+      - name: Commit & Push
+        run: |
+          cd db-insert
+          git config user.name "dntjd1097"
+          git config user.email "dntjd1097@gmail.com"
+          git add -A .
+          git commit -m "generated"
+          git push
