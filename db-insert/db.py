@@ -2,9 +2,9 @@ import pymysql
 import os
 
 
-def sql_command(name, cate, sub_cate, url, img, style, seasons, thick, idx):
-    sql = "INSERT INTO items (name, category, sub_category, url, img_src, fit, seasons, thickness) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    values = (name, cate, sub_cate, url, img, style, seasons, thick)
+def sql_command(name, kind, cate, sub_cate, url, img, style, seasons, thick, idx):
+    sql = "INSERT INTO items (name, kind,category, sub_category, url, img_src, fit, seasons, thickness) VALUES (%s, %s,%s, %s, %s, %s, %s, %s, %s)"
+    values = (name, kind, cate, sub_cate, url, img, style, seasons, thick)
 
     db_insert(sql, values, idx)
 

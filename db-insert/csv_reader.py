@@ -8,6 +8,7 @@ from db import sql_command, get_database_connection
 def mt_process(args):
     sql_command(
         args["name"],
+        args["kind"],
         args["cg1"],
         args["cg2"],
         args["url"],
@@ -35,13 +36,14 @@ if __name__ == "__main__":
                         Label = {}
                         Label["index"] = line[0]
                         Label["name"] = line[1]
-                        Label["cg1"] = line[2]
-                        Label["cg2"] = line[3]
-                        Label["url"] = line[4]
-                        Label["src"] = line[5]
-                        Label["fit"] = line[6]
-                        Label["seasons"] = line[7]
-                        Label["thickness"] = line[8]
+                        Label["kind"] = line[2]
+                        Label["cg1"] = line[3]
+                        Label["cg2"] = line[4]
+                        Label["url"] = line[5]
+                        Label["src"] = line[6]
+                        Label["fit"] = line[7]
+                        Label["seasons"] = line[8]
+                        Label["thickness"] = line[9]
                         pool.apply_async(mt_process, (Label,))
                     pool.close()
                     pool.join()
