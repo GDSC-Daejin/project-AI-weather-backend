@@ -30,9 +30,9 @@ jobs:
           echo "DB_IP_ADDR=${{ secrets.DB_IP_ADDR }}" >> .env
       - name: Run python
         run: |
-          pwd
           cd db-insert
-          pwd
           python csv_reader.py | tee output.txt
       - name: Display output
-        run: cat output.txt
+        run: |
+          cd db-insert
+          cat output.txt
