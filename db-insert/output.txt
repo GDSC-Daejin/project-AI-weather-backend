@@ -1,0 +1,2 @@
+155 (1062, "Duplicate entry '[여름][세트상품] 커스터마이징 핏 셋업 수트 (네' for key 'items.PRIMARY'")
+511 (1062, "Duplicate entry '데님 햅톤 워크 자켓 awa510m(BLUE)' for key 'items.PRIMARY'")
