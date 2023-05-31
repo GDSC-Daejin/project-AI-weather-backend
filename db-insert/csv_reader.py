@@ -25,7 +25,7 @@ if __name__ == "__main__":
     file_pattern = "csv/*.csv"
     file_list = glob.glob(file_pattern)
 
-    process = 10
+    process = 20
     if get_database_connection():
         for file_path in file_list:
             with open(file_path, "r", encoding="UTF8") as f:
