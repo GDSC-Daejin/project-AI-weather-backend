@@ -36,5 +36,9 @@ jobs:
 
       - name: Run python
         run: |
-          export PYTHONPATH= ${{ env.working-directory }}
+          pwd
+          ls -la
+          cd db-insert
+          pwd
+          ls -la
           python csv_reader.py
