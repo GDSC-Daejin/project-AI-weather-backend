@@ -11,10 +11,10 @@ def sql_command(name, cate, sub_cate, url, img, style, seasons, thick, idx):
 
 
 def db_insert(sql, values, idx):
-    DB_IP_addr = os.environ["DB_IP_ADDR"]
-
-    # except:
-    #     DB_IP_addr = "10.0.0.16"
+    try:
+        DB_IP_addr = os.environ["DB_IP_ADDR1"]
+    except:
+        DB_IP_addr = "10.0.0.16"
     # 데이터베이스 연결 설정
 
     connection = pymysql.connect(
