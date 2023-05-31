@@ -29,6 +29,8 @@ jobs:
         run: |
           echo "DB_IP_ADDR=${{ secrets.DB_IP_ADDR }}" >> .env
       - name: Run python
+        env:
+          DB_IP_ADDR: ${{ secrets.DB_IP_ADDR }}
         run: |
           cd db-insert
           echo $DB_IP_ADDR
