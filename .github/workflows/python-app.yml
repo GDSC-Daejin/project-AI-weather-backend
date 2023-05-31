@@ -25,9 +25,6 @@ jobs:
           cd db-insert
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Setting .env
-        run: |
-          echo "DB_IP_ADDR=${{ secrets.DB_IP_ADDR }}" >> .env
       - name: Run python
         env:
           DB_IP_ADDR: ${{ secrets.DB_IP_ADDR }}
