@@ -31,6 +31,7 @@ jobs:
       - name: Run python
         run: |
           cd db-insert
+          echo $DB_IP_ADDR
           python csv_reader.py | tee output.txt
       - name: Display output
         run: |
