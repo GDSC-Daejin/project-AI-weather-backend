@@ -16,8 +16,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./db-insert
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
@@ -27,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-
+          cd db-insert
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Setting .env
@@ -37,8 +35,6 @@ jobs:
       - name: Run python
         run: |
           pwd
-          ls -la
           cd db-insert
           pwd
-          ls -la
           python csv_reader.py
